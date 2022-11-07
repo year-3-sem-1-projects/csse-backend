@@ -1,4 +1,4 @@
-import { addPurchaseOrderRepository } from '../repositories/purchaseOrder.js'
+import { addPurchaseOrderRepository } from '../repository/purchaseOrder.js'
 
 export const addPurchaseOrderService = async (purchaseOrder) => {
   return await addPurchaseOrderRepository(purchaseOrder)
