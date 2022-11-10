@@ -2,13 +2,17 @@ import mongoose from 'mongoose'
 
 const companySchema = new mongoose.Schema(
   {
+    company_id: {
+      type: String,
+      required: true,
+    },
     company_name: {
       type: String,
       required: true,
     },
     company_address: {
       type: String,
-      required: true,
+      required: false,
     },
     company_email: {
       type: String,
@@ -16,7 +20,7 @@ const companySchema = new mongoose.Schema(
     },
     company_phone: {
       type: String,
-      required: true,
+      required: false,
     },
     company_logo: {
       type: String,
@@ -28,27 +32,27 @@ const companySchema = new mongoose.Schema(
     },
     company_description: {
       type: String,
-      required: true,
+      required: false,
     },
     company_size: {
       type: String,
-      required: true,
+      required: false,
     },
     company_country: {
       type: String,
-      required: true,
+      required: false,
     },
     company_city: {
       type: String,
-      required: true,
+      required: false,
     },
     company_state: {
       type: String,
-      required: true,
+      required: false,
     },
     company_zip: {
       type: String,
-      required: true,
+      required: false,
     },
     employees: [
       {
