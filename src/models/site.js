@@ -12,7 +12,11 @@ const siteSchema = new mongoose.Schema(
     },
     siteManagerId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Employee',
+      ref: 'site_manager',
+    },
+    companyId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'company',
     },
   },
   {
@@ -21,6 +25,6 @@ const siteSchema = new mongoose.Schema(
   },
 )
 
-const Site = mongoose.model('Site', siteSchema)
+const Site = mongoose.model('site', siteSchema)
 
 export default Site

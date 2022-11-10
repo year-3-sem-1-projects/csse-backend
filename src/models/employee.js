@@ -2,11 +2,11 @@ import mongoose from 'mongoose'
 
 const employeeSchema = new mongoose.Schema(
   {
-    firstName: {
+    first_name: {
       type: String,
       required: true,
     },
-    lastName: {
+    last_name: {
       type: String,
       required: true,
     },
@@ -18,13 +18,37 @@ const employeeSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    siteId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Site',
+    role: {
+      type: String,
+      required: true,
     },
-    companyId: {
+    site_manager: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'site_manager',
+      },
+    ],
+    manager: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'manager',
+      },
+    ],
+    accounting_staff: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'accounting_staff',
+      },
+    ],
+    procurement_staff: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'procurement_staff',
+      },
+    ],
+    company_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Company',
+      ref: 'company',
     },
   },
   {
@@ -33,6 +57,6 @@ const employeeSchema = new mongoose.Schema(
   },
 )
 
-const Employee = mongoose.model('Employee', employeeSchema)
+const Employee = mongoose.model('employee', employeeSchema)
 
 export default Employee

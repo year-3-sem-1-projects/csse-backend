@@ -10,7 +10,7 @@ const deliveryAdviceNoteSchema = new mongoose.Schema(
       {
         id: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'DeliveryItem',
+          ref: 'item',
         },
         quantity: {
           type: Number,
@@ -20,15 +20,15 @@ const deliveryAdviceNoteSchema = new mongoose.Schema(
     ],
     supplierId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Supplier',
+      ref: 'supplier',
     },
     siteId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Site',
+      ref: 'site',
     },
     purchaseOrderId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'PurchaseOrder',
+      ref: 'purchase_order',
     },
   },
   {
