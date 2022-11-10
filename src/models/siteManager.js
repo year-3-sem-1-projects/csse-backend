@@ -12,6 +12,12 @@ const siteManagerSchema = new mongoose.Schema(
         ref: 'purchase_order',
       },
     ],
+    site: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'site',
+      },
+    ],
   },
   {
     versionKey: false,

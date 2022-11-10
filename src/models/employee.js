@@ -14,38 +14,10 @@ const employeeSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    password: {
-      type: String,
-      required: true,
-    },
     role: {
       type: String,
       required: true,
     },
-    site_manager: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'site_manager',
-      },
-    ],
-    manager: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'manager',
-      },
-    ],
-    accounting_staff: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'accounting_staff',
-      },
-    ],
-    procurement_staff: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'procurement_staff',
-      },
-    ],
     company_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'company',

@@ -3,6 +3,6 @@ import { addPurchaseOrder } from '../controllers/purchaseOrder'
 
 const router = Router()
 
-router.post('add/:sitemanagerId', addPurchaseOrder)
+router.post('/add', addPurchaseOrder)
 
 export default router
