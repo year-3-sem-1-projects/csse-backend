@@ -2,19 +2,15 @@ import mongoose from 'mongoose'
 
 const purchaseOrderSchema = new mongoose.Schema(
   {
-    orderDate: {
-      type: Date,
-      required: true,
-    },
-    orderStatus: {
+    order_status: {
       type: String,
       required: true,
     },
-    orderItems: [
+    order_items: [
       {
         id: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'OrderItem',
+          ref: 'item',
         },
         quantity: {
           type: Number,
@@ -22,22 +18,50 @@ const purchaseOrderSchema = new mongoose.Schema(
         },
       },
     ],
-    sitemanagerId: {
+    comments: [
+      {
+        author: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'manager',
+        },
+        comment: {
+          type: String,
+          required: true,
+        },
+        date: {
+          type: Date,
+          required: true,
+        },
+      },
+    ],
+    assigned_manager: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'manager',
+      },
+    ],
+    site_manager_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'SiteManager',
+      ref: 'site_manager',
     },
-    supplierId: {
+    supplier_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Supplier',
+      ref: 'supplier',
     },
-    siteId: {
+    site_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Site',
+      ref: 'site',
     },
-    requiredDeliveryDate: {
+    required_delivery_date: {
       type: Date,
-      required: true,
+      required: false,
     },
+    delivery: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'delivery',
+      },
+    ],
   },
   {
     versionKey: false,
@@ -45,6 +69,6 @@ const purchaseOrderSchema = new mongoose.Schema(
   },
 )
 
-const PurchaseOrder = mongoose.model('PurchaseOrder', purchaseOrderSchema)
+const PurchaseOrder = mongoose.model('purchase_order', purchaseOrderSchema)
 
 export default PurchaseOrder

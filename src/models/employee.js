@@ -2,29 +2,25 @@ import mongoose from 'mongoose'
 
 const employeeSchema = new mongoose.Schema(
   {
-    firstName: {
+    first_name: {
       type: String,
-      required: true,
+      required: false,
     },
-    lastName: {
+    last_name: {
       type: String,
-      required: true,
+      required: false,
     },
     email: {
       type: String,
       required: true,
     },
-    password: {
+    role: {
       type: String,
       required: true,
     },
-    siteId: {
+    company_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Site',
-    },
-    companyId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Company',
+      ref: 'company',
     },
   },
   {
@@ -33,6 +29,6 @@ const employeeSchema = new mongoose.Schema(
   },
 )
 
-const Employee = mongoose.model('Employee', employeeSchema)
+const Employee = mongoose.model('employee', employeeSchema)
 
 export default Employee

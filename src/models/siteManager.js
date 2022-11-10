@@ -2,26 +2,20 @@ import mongoose from 'mongoose'
 
 const siteManagerSchema = new mongoose.Schema(
   {
-    siteManagerName: {
-      type: String,
+    site_manager_id: {
+      type: 'String',
       required: true,
     },
-    siteManagerEmail: {
-      type: String,
-      required: true,
-    },
-    siteManagerPhone: {
-      type: String,
-      required: true,
-    },
-    siteManagerPassword: {
-      type: String,
-      required: true,
-    },
-    siteList: [
+    purchase_order: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Site',
+        ref: 'purchase_order',
+      },
+    ],
+    site: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'site',
       },
     ],
   },
@@ -31,6 +25,6 @@ const siteManagerSchema = new mongoose.Schema(
   },
 )
 
-const SiteManager = mongoose.model('SiteManager', siteManagerSchema)
+const SiteManager = mongoose.model('site_manager', siteManagerSchema)
 
 export default SiteManager
