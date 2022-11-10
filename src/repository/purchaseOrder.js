@@ -3,15 +3,18 @@ import SiteManager from '../models/siteManager'
 
 export const addPurchaseOrderRepository = async (purchaseOrder) => {
   try {
-    const { site_manager_id } = purchaseOrder
-    const { _id } = await new PurchaseOrder(purchaseOrder).save()
-    await SiteManager.findOneAndUpdate(
-      { site_manager_id },
-      {
-        $push: { purchase_order: _id },
-      },
-    )
-    return purchaseOrder
+    // const { site_manager_id } = purchaseOrder
+    const newPurchaseOrder = await new PurchaseOrder(purchaseOrder).save()
+    return newPurchaseOrder
+  } catch (error) {
+    return { status: 400, message: error.message }
+  }
+}
+
+export const getAllPurchaseOrdersRepository = async () => {
+  try {
+    const purchaseOrders = await PurchaseOrder.find()
+    return purchaseOrders
   } catch (error) {
     return { status: 400, message: error.message }
   }

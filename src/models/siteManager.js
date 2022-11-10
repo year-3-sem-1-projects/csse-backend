@@ -3,8 +3,8 @@ import mongoose from 'mongoose'
 const siteManagerSchema = new mongoose.Schema(
   {
     site_manager_id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'employee',
+      type: 'String',
+      required: true,
     },
     purchase_order: [
       {

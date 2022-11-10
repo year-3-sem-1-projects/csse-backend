@@ -54,7 +54,7 @@ const purchaseOrderSchema = new mongoose.Schema(
     },
     required_delivery_date: {
       type: Date,
-      required: true,
+      required: false,
     },
     delivery: [
       {

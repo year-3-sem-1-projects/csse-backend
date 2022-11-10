@@ -1,8 +1,9 @@
 import { Router } from 'express'
-import { addPurchaseOrder } from '../controllers/purchaseOrder'
+import { addPurchaseOrder, getAllPurchaseOrders } from '../controllers/purchaseOrder'
 
 const router = Router()
 
+router.get('/', getAllPurchaseOrders)
 router.post('/add', addPurchaseOrder)
 
 export default router
