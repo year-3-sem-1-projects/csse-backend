@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 
-const accountingStaffSchema = new mongoose.Schema(
+const procurementStaffSchema = new mongoose.Schema(
   {
-    accounting_staff_id: {
+    procurement_staff_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'employee',
     },
@@ -13,6 +13,6 @@ const accountingStaffSchema = new mongoose.Schema(
   },
 )
 
-const AccountingStaff = mongoose.model('accounting_staff', accountingStaffSchema)
+const ProcurementStaff = mongoose.model('procurement_staff', procurementStaffSchema)
 
-export default AccountingStaff
+export default ProcurementStaff

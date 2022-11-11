@@ -2,13 +2,18 @@ import mongoose from 'mongoose'
 
 const employeeSchema = new mongoose.Schema(
   {
+    employee_id: {
+      type: 'String',
+      ref: 'site_manager',
+      required: true,
+    },
     first_name: {
       type: String,
-      required: false,
+      required: true,
     },
     last_name: {
       type: String,
-      required: false,
+      required: true,
     },
     email: {
       type: String,
@@ -19,7 +24,7 @@ const employeeSchema = new mongoose.Schema(
       required: true,
     },
     company_id: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: 'String',
       ref: 'company',
     },
   },
