@@ -2,7 +2,7 @@ import {
   getAllItemsRepository,
   getAllItemsBySupplierIdRepository,
   addItemBySupplierIdRepository,
-  updateItemService,
+  updateItemRepository,
 } from '../repository/item'
 
 export const getAllItemsService = async () => {
