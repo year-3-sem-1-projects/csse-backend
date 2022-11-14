@@ -1,9 +1,19 @@
 import { Router } from 'express'
-import { addPurchaseOrder, getAllPurchaseOrders } from '../controllers/purchaseOrder'
+import {
+  getAllPurchaseOrders,
+  getPurchaseOrderById,
+  addPurchaseOrder,
+  updatePurchaseOrder,
+  deletePurchaseOrder,
+} from '../controllers/purchaseOrder'
 
 const router = Router()
 
-router.get('/', getAllPurchaseOrders)
 router.post('/add', addPurchaseOrder)
+router.put('/update/:purchaseOrderId', updatePurchaseOrder)
+router.delete('/delete/:purchaseOrderId', deletePurchaseOrder)
+router.get('/', getAllPurchaseOrders)
+router.get('/:id', getPurchaseOrderById)
 
 export default router
+

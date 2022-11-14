@@ -20,7 +20,7 @@ const companySchema = new mongoose.Schema(
     },
     company_phone: {
       type: String,
-      required: false,
+      required: true,
     },
     company_logo: {
       type: String,
@@ -36,27 +36,45 @@ const companySchema = new mongoose.Schema(
     },
     company_size: {
       type: String,
-      required: false,
+      required: true,
     },
     company_country: {
       type: String,
-      required: false,
+      required: true,
     },
     company_city: {
       type: String,
-      required: false,
+      required: true,
     },
     company_state: {
       type: String,
-      required: false,
+      required: true,
     },
     company_zip: {
       type: String,
-      required: false,
+      required: true,
     },
-    employees: [
+    site_managers: [
       {
-        type: mongoose.Schema.Types.ObjectId,
+        type: 'String',
+        ref: 'employee',
+      },
+    ],
+    managers: [
+      {
+        type: 'String',
+        ref: 'employee',
+      },
+    ],
+    accounting_staffs: [
+      {
+        type: 'String',
+        ref: 'employee',
+      },
+    ],
+    procurement_staffs: [
+      {
+        type: 'String',
         ref: 'employee',
       },
     ],
@@ -64,6 +82,12 @@ const companySchema = new mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'site',
+      },
+    ],
+    suppliers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'supplier',
       },
     ],
   },

@@ -43,6 +43,10 @@ export const createUser = async (email, password) => {
 }
 
 export const signOutUser = async () => {
-  const auth = getAuth()
-  return await signOut(auth)
+  try {
+    const auth = getAuth()
+    return await signOut(auth)
+  } catch (error) {
+    console.error(error.code, error.message)
+  }
 }

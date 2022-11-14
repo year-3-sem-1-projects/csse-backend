@@ -1,27 +1,33 @@
 import mongoose from 'mongoose'
 
-const itemSchema = new mongoose.Schema(
+const supplierSchema = new mongoose.Schema(
   {
-    item_name: {
-      type: String,
-      required: true,
-    },
-    item_description: {
-      type: String,
-      required: true,
-    },
-    item_category: {
-      type: String,
-      required: true,
-    },
-    item_unit_price: {
-      type: Number,
-      required: true,
-    },
     supplier_id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'supplier',
+      type: String,
+      required: true,
     },
+    supplier_name: {
+      type: String,
+      required: true,
+    },
+    supplier_address: {
+      type: String,
+      required: true,
+    },
+    supplier_contact: {
+      type: String,
+      required: true,
+    },
+    supplier_email: {
+      type: String,
+      required: true,
+    },
+    supplier_items: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'item',
+      },
+    ],
     procurement_staff: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'procurement_staff',
@@ -32,7 +38,3 @@ const itemSchema = new mongoose.Schema(
     timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
   },
 )
-
-const Item = mongoose.model('item', itemSchema)
-
-export default Item

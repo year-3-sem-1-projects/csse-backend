@@ -14,7 +14,7 @@ const siteManagerSchema = new mongoose.Schema(
     ],
     site: [
       {
-        type: mongoose.Schema.Types.ObjectId,
+        type: 'String',
         ref: 'site',
       },
     ],

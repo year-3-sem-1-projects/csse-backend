@@ -6,10 +6,6 @@ const accountingStaffSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'employee',
     },
-    company_id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'company',
-    },
   },
   {
     versionKey: false,
