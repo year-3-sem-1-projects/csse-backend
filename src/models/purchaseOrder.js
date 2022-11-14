@@ -72,3 +72,4 @@ const purchaseOrderSchema = new mongoose.Schema(
 const PurchaseOrder = mongoose.model('purchase_order', purchaseOrderSchema)
 
 export default PurchaseOrder
+
