@@ -14,3 +14,5 @@ router.get('/:supplier_id', getAllItemsBySupplierId)
 router.post('/add', addItemBySupplierId)
 router.put('/update', updateItem)
 router.delete('/delete/:item_id', deleteItem)
+
+export default router
