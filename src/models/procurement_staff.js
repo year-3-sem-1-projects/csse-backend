@@ -3,9 +3,21 @@ import mongoose from 'mongoose'
 const procurementStaffSchema = new mongoose.Schema(
   {
     procurement_staff_id: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: 'String',
       ref: 'employee',
     },
+    added_suppliers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'supplier',
+      },
+    ],
+    added_items: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'item',
+      },
+    ],
   },
   {
     versionKey: false,

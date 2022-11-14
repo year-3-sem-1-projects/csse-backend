@@ -54,7 +54,7 @@ export const signUpEmployeeRepository = async (user, site, uid) => {
 
 export const loginRepository = async (uid) => {
   try {
-    await Employee.findOne({ employee_id: uid })
+    return await Employee.findOne({ employee_id: uid })
   } catch (error) {
     return { status: error.code, message: error.message }
   }

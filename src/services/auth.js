@@ -3,7 +3,7 @@ import {
   signUpEmployeeRepository,
   loginRepository,
   siteManagerLoginRepository,
-} from '../repository/auth.js'
+} from '../repository/auth'
 
 export const signUpCompanyService = async (company) => {
   return await signUpCompanyRepository(company)

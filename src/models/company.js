@@ -84,6 +84,12 @@ const companySchema = new mongoose.Schema(
         ref: 'site',
       },
     ],
+    suppliers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'supplier',
+      },
+    ],
   },
   {
     versionKey: false,
