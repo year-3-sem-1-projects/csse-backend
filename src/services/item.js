@@ -3,6 +3,7 @@ import {
   getAllItemsBySupplierIdRepository,
   addItemBySupplierIdRepository,
   updateItemRepository,
+  deleteItemRepository,
 } from '../repository/item'
 
 export const getAllItemsService = async () => {
