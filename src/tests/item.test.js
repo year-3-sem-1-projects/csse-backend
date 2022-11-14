@@ -1,6 +1,6 @@
 import jest from "jest"
 import request from "supertest"
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:5432";
 let itemData = {}
 
 describe(`delivery`, () => {
@@ -8,7 +8,7 @@ describe(`delivery`, () => {
         item_name: "Cement", 
         item_description: "Good cement",
         item_category: "cement",
-        item_unit_price: 2500
+        item_unit_price: 2500,
     }
 
     beforeAll(async () => {

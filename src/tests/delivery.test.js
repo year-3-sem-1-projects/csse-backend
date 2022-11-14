@@ -1,6 +1,6 @@
 import jest from "jest"
 import request from "supertest"
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:5432";
 let deliveryData = {}
 
 describe(`delivery`, () => {

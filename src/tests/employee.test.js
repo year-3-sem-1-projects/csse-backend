@@ -1,11 +1,15 @@
 import jest from "jest"
 import request from "supertest"
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:5432";
 let employeeData = {}
 
 describe(`employee`, () => {
     const newEmployee = {
-        delivery_status: "pending"
+        first_name: "testFname",
+        last_name: "testLastname",
+        email: "test@gmail.com",
+        role: "testRole",
+        company_id: "testId"
     }
 
     beforeAll(async () => {
